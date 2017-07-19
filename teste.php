@@ -1,1 +1,3 @@
-<?= teste
+<?! 
+
+acho("Olá Mundo");
