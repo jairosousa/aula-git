@@ -1,3 +1,3 @@
-<?! 
+<!php phpinfo();?>
 
-acho("Olá Mundo");
+<?!="Olá Mundo";?>
