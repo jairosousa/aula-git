@@ -108,7 +108,7 @@ Date:   Wed Jul 19 21:56:56 2017 -0300*
 
 Um desenvolvimento de software possui um linha do tempo principal **“master”** e os **branches** são ramificações dessa linha do tempo que pode ser criando pedaços do software sem alterar a linha do tempo principal, existe também branches de branches.
 
-[imagem01](/img/img-01.png)
+![imagem01](/img/img-01.PNG)
 
 **Criando o primeiro Branch**
 
@@ -125,4 +125,34 @@ Um desenvolvimento de software possui um linha do tempo principal **“master”** e
 
     <pre> > git checkout master
 
+**Merge e Rebase**
+
+ 
+
+ - **Merge**
+uni os branch e **cria um novo commit ** no branch atual. 
+
+<pre> > git merge "nome branch que quer fazer o merge"
+<pre>Merge made by the 'recursive' strategy.
+ funcionalidades.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 funcionalidades.txt
+c:\cursos\Code-Education\cursogit (master)
+? git log
+commit 0a991602725ab938052dd2338cf88dbaf7852d64 (HEAD -> master)
+Merge: ced6aad e94632d
+Author: Jairo Sousa <jaironsousa@gmail.com>
+Date:   Thu Jul 20 08:06:06 2017 -0300
+
+
+ - **Rebase** 
+uni os branch mais **organiza os commits na ordem que eles foram realizados e não cria o commit do merge**
+
+<pre> > git rebase "nome branch que quer fazer o rebase"
+<pre> First, rewinding head to replay your work on top of it...
+Applying: Adicionando o arquivo texto4.txt
+**Ele acabou de re ordenar a Head (Cabeça) do branh atual**
+
+<pre> > git log
+<pre> Verifique que os commits foram organizados pela oredem e não foi criado um novo commit
 
