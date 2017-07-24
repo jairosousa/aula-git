@@ -1,7 +1,7 @@
 Bem Vindo ao Curso de Git!
 ======================
 
-##PRIMEIROS PASSOS##
+#PRIMEIROS PASSOS
 
 *Verificar se GIT está instalado*
 
@@ -17,7 +17,7 @@ Bem Vindo ao Curso de Git!
 **<i class="icon-asterisk"> Agora já tem diretório configurado pelo Git**
 > - criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coisa no arquivo.
 
-**<i class="icon-question"></i> Ajuda:**
+**Ajuda! :+1:**
 Criar arquivos pelo CMD ou Bash
 
     > copy NUL arquivo-novobranch.php(cmd)
@@ -25,7 +25,7 @@ Criar arquivos pelo CMD ou Bash
 
 Para editá-los podem usar bloco de notas.
 
-##OS TRÊS ESTÁGIOS DE UM COMMIT##
+#OS TRÊS ESTÁGIOS DE UM COMMIT
 
 >1 - Untracked
 
@@ -82,7 +82,7 @@ Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do com
 
 Mostra os logs de todos os commits feitos nos últimos dias (no exemplo foi pedido 2 dias).
 
-##FLUXO E VERSÕES##
+#FLUXO E VERSÕES
 
 **Desfazendo o ADD**
 Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
