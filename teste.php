@@ -1,3 +1,3 @@
 <!php phpinfo();?>
 
-<?!="Olá Mundo";?>
+Olá Galera!
