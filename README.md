@@ -3,19 +3,19 @@ Bem Vindo ao Curso de Git!
 
 ## PRIMEIROS PASSOS
 
-*Verificar se GIT est· instalado*
+*Verificar se GIT est√° instalado*
 
     > git
 
 **<i class="icon-asterisk"> PREPARANDO O AMBIENTE**
-> - Criar repositÛrio (pasta que vai guardar todos os arquivos do projeto)
+> - Criar reposit√≥rio (pasta que vai guardar todos os arquivos do projeto)
 > - mkdir aulagit (cria pasta onde vai ficar arquivos do projeto)
 > - cd aulagit (acessar a pasta)
 
-    > git init (cria diretÛrio .git )
+    > git init (cria diret√≥rio .git )
 
-**<i class="icon-asterisk"> Agora j· tem diretÛrio configurado pelo Git**
-> - criar arquivo qualquer um ".txt" no diretÛrio "auldagit" e digite qualquer coisa no arquivo.
+**<i class="icon-asterisk"> Agora j√° tem diret√≥rio configurado pelo Git**
+> - criar arquivo qualquer um ".txt" no diret√≥rio "auldagit" e digite qualquer coisa no arquivo.
 
 **Ajuda! :+1:**
 Criar arquivos pelo CMD ou Bash
@@ -23,36 +23,36 @@ Criar arquivos pelo CMD ou Bash
     > copy NUL arquivo-novobranch.php(cmd)
     > touch arquivo-novobranch.php (bach)
 
-Para edit·-los podem usar bloco de notas.
+Para edit√°-los podem usar bloco de notas.
 
-## OS TR S EST¡GIOS DE UM COMMIT
+## OS TR√äS EST√ÅGIOS DE UM COMMIT
 
 >1 - Untracked
 
-O arquivo est· no diretÛrio mas n„o est· no Git 
+O arquivo est√° no diret√≥rio mas n√£o est√° no Git 
 
     >git status
 
-verifica o est·gios dos arquivos
+verifica o est√°gios dos arquivos
 
 >2 - Changes to be commiterd
 
-Quando o arquivo È adicionado e comeÁa a fazer parte de um controle de vers„o.
+Quando o arquivo √© adicionado e come√ßa a fazer parte de um controle de vers√£o.
 
     > git add <<nome do arquivo>> 
     > git add .
 
-Agora o arquivo est· pronto para entrar no controle de vers„o.
+Agora o arquivo est√° pronto para entrar no controle de vers√£o.
 
 >3 - Unstage
 
-quando o arquivo passa para o controle de vers„o ou seja È dado o commit.
+quando o arquivo passa para o controle de vers√£o ou seja √© dado o commit.
 
 **Commit**
 
-    > git commit -m ìmeu primeiro commitî  
+    > git commit -m ‚Äúmeu primeiro commit‚Äù  
 
-onde o **"-m"** È para colocar uma mensagem.
+onde o **"-m"** √© para colocar uma mensagem.
 
     > git log 
 
@@ -64,39 +64,39 @@ verifica em cada arquivo comitado o que foi mudado.
 
     > git log -p -2 
 
-(2 È um Ìndice que indica os ˙ltimos arquivos comitado) => verifica nos dois ˙ltimos arquivo comitados o que foi mudado.
+(2 √© um √≠ndice que indica os √∫ltimos arquivos comitado) => verifica nos dois √∫ltimos arquivo comitados o que foi mudado.
 
     > git log --stat
 
-mostra o git log e mais as estatÌsticas de todos os commits
+mostra o git log e mais as estat√≠sticas de todos os commits
 
     > git log --pretty=oneline
 
-Mostra todos os commits em uma linha sÛ.
+Mostra todos os commits em uma linha s√≥.
 
     > git log --pretty=format:"%h - %an, %ar : %s"
 
-Mostra o inÌcio do Rest, quem commitou, quanto tempo atr·s, e a descriÁ„o do commit.
+Mostra o in√≠cio do Rest, quem commitou, quanto tempo atr√°s, e a descri√ß√£o do commit.
 
     > git log --since=2.days
 
-Mostra os logs de todos os commits feitos nos ˙ltimos dias (no exemplo foi pedido 2 dias).
+Mostra os logs de todos os commits feitos nos √∫ltimos dias (no exemplo foi pedido 2 dias).
 
-## FLUXO E VERS’ES
+## FLUXO E VERS√ïES
 
 **Desfazendo o ADD**
-Quando vocÍ esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condiÁıes de ser commitado.
+Quando voc√™ esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condi√ß√µes de ser commitado.
 
     >git reset HEAD <<nome do arquivo>>
 
-**Voltando  versıes**
+**Voltando  vers√µes**
 
-VocÍ desja desfazer um commit dado.
+Voc√™ desja desfazer um commit dado.
 
-* primeiro verificar o ID do commit a ser desfeito, vocÍ pode verificar com o comando:
+* primeiro verificar o ID do commit a ser desfeito, voc√™ pode verificar com o comando:
 
      <pre>> git log
-*commit* *f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd* <=**Este È ID**
+*commit* *f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd* <=**Este √© ID**
 Author: Jairo Sousa <jaironsousa@gmail.com>
 Date:   Wed Jul 19 21:56:56 2017 -0300*
 
@@ -106,13 +106,13 @@ Date:   Wed Jul 19 21:56:56 2017 -0300*
 
 **Entendendo os Branches**
 
-Um desenvolvimento de software possui um linha do tempo principal **ìmasterî** e os **branches** s„o ramificaÁıes dessa linha do tempo que pode ser criando pedaÁos do software sem alterar a linha do tempo principal, existe tambÈm branches de branches.
+Um desenvolvimento de software possui um linha do tempo principal **‚Äúmaster‚Äù** e os **branches** s√£o ramifica√ß√µes dessa linha do tempo que pode ser criando peda√ßos do software sem alterar a linha do tempo principal, existe tamb√©m branches de branches.
 
 ![imagem01](/img/img-01.PNG)
 
 **Criando o primeiro Branch**
 
- 1. Verifica qual **branch** vocÍ est·
+ 1. Verifica qual **branch** voc√™ est√°
 
     <pre> > git branch
     *master*
@@ -132,7 +132,8 @@ Um desenvolvimento de software possui um linha do tempo principal **ìmasterî** e
  - **Merge**
 uni os branch e **cria um novo commit ** no branch atual. 
 
-<pre> > git merge "nome branch que quer fazer o merge"
+<pre> > git merge "nome branch que quer fazer o merge"</pre>
+
 <pre>Merge made by the 'recursive' strategy.
  funcionalidades.txt | 1 +
  1 file changed, 1 insertion(+)
@@ -143,16 +144,19 @@ commit 0a991602725ab938052dd2338cf88dbaf7852d64 (HEAD -> master)
 Merge: ced6aad e94632d
 Author: Jairo Sousa <jaironsousa@gmail.com>
 Date:   Thu Jul 20 08:06:06 2017 -0300
-
+</pre>
 
  - **Rebase** 
-uni os branch mais **organiza os commits na ordem que eles foram realizados e n„o cria o commit do merge**
+uni os branch mais **organiza os commits na ordem que eles foram realizados e n√£o cria o commit do merge**
 
-<pre> > git rebase "nome branch que quer fazer o rebase"
+<pre> > git rebase "nome branch que quer fazer o rebase"</pre>
+
 <pre> First, rewinding head to replay your work on top of it...
 Applying: Adicionando o arquivo texto4.txt
-**Ele acabou de re ordenar a Head (CabeÁa) do branh atual**
+**Ele acabou de re ordenar a Head (Cabe√ßa) do branh atual**
+</pre>
 
 <pre> > git log
-<pre> Verifique que os commits foram organizados pela oredem e n„o foi criado um novo commit
+
+Verifique que os commits foram organizados pela oredem e n√£o foi criado um novo commit
 
