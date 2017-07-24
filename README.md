@@ -1,18 +1,18 @@
 Bem Vindo ao Curso de Git!
 ======================
 
-###PRIMEIROS PASSOS###
+##PRIMEIROS PASSOS##
 
->Verificar se GIT está instalado
+*Verificar se GIT está instalado*
 
-    >git
+    > git
 
 **<i class="icon-asterisk"> PREPARANDO O AMBIENTE**
 > - Criar repositório (pasta que vai guardar todos os arquivos do projeto)
 > - mkdir aulagit (cria pasta onde vai ficar arquivos do projeto)
 > - cd aulagit (acessar a pasta)
 
-    >git init (cria diretório .git )
+    > git init (cria diretório .git )
 
 **<i class="icon-asterisk"> Agora já tem diretório configurado pelo Git**
 > - criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coisa no arquivo.
@@ -20,12 +20,12 @@ Bem Vindo ao Curso de Git!
 **<i class="icon-question"></i> Ajuda:**
 Criar arquivos pelo CMD ou Bash
 
-    >copy NUL arquivo-novobranch.php(cmd)
-    >touch arquivo-novobranch.php (bach)
+    > copy NUL arquivo-novobranch.php(cmd)
+    > touch arquivo-novobranch.php (bach)
 
 Para editá-los podem usar bloco de notas.
 
-###OS TRÊS ESTÁGIOS DE UM COMMIT###
+##OS TRÊS ESTÁGIOS DE UM COMMIT##
 
 >1 - Untracked
 
@@ -82,7 +82,7 @@ Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do com
 
 Mostra os logs de todos os commits feitos nos últimos dias (no exemplo foi pedido 2 dias).
 
-###FLUXO E VERSÕES###
+##FLUXO E VERSÕES##
 
 **Desfazendo o ADD**
 Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
