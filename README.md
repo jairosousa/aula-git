@@ -1,7 +1,7 @@
 Bem Vindo ao Curso de Git!
 ======================
 
-#PRIMEIROS PASSOS
+## PRIMEIROS PASSOS
 
 *Verificar se GIT está instalado*
 
@@ -25,7 +25,7 @@ Criar arquivos pelo CMD ou Bash
 
 Para editá-los podem usar bloco de notas.
 
-#OS TRÊS ESTÁGIOS DE UM COMMIT
+## OS TRÊS ESTÁGIOS DE UM COMMIT
 
 >1 - Untracked
 
@@ -82,7 +82,7 @@ Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do com
 
 Mostra os logs de todos os commits feitos nos últimos dias (no exemplo foi pedido 2 dias).
 
-#FLUXO E VERSÕES
+## FLUXO E VERSÕES
 
 **Desfazendo o ADD**
 Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
@@ -96,10 +96,33 @@ Você desja desfazer um commit dado.
 * primeiro verificar o ID do commit a ser desfeito, você pode verificar com o comando:
 
      <pre>> git log
-
 *commit* *f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd* <=**Este é ID**
 Author: Jairo Sousa <jaironsousa@gmail.com>
 Date:   Wed Jul 19 21:56:56 2017 -0300*
 
-    > git checkout f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd
+    <pre> > git checkout f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd
+
+## BRANCHES
+
+**Entendendo os Branches**
+
+Um desenvolvimento de software possui um linha do tempo principal **“master”** e os **branches** são ramificações dessa linha do tempo que pode ser criando pedaços do software sem alterar a linha do tempo principal, existe também branches de branches.
+
+[imagem01](/img/img-01.png)
+
+**Criando o primeiro Branch**
+
+ 1. Verifica qual **branch** você está
+
+    <pre> > git branch
+    *master*
+
+ 2. Criar Branch
+
+    <pre> > git checkout -b **"nome do branch"**
+
+ 3. Para voltar branch *master*
+
+    <pre> > git checkout master
+
 
