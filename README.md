@@ -167,15 +167,20 @@ uni os branch mais **organiza os commits na ordem que eles foram realizados e n�
 
 ```
 > git rebase "nome branch que quer fazer o rebase"
-```
+
 *First, rewinding head to replay your work on top of it...
 Applying: Adicionando o arquivo texto4.txt
 **Ele acabou de re ordenar a Head (Cabeça) do branh atual**
 
 ```
+
+Verifique que os commits foram organizados pela ordem e não foi criado um novo commit
+
+
+```
 > git log
 ```
-Verifique que os commits foram organizados pela ordem e não foi criado um novo commit
+
 
 ### Removendo um branch
 
@@ -187,8 +192,10 @@ Para remover um branch utilize o comando:
 
 ```
  > git branch -D "nome-do-branch"
-Teste isso agora mesmo em seu computador!
+
 ````
+
+Teste isso agora mesmo em seu computador!
 
 ## GITHUB
 
@@ -199,10 +206,12 @@ Teste isso agora mesmo em seu computador!
 ### Fazendo o primeiro push**
 
  - Primeiro configurar o repositório remoto para Git saber para onde mandar os arquivos.
+ 
 
 ```
  > git remote add origin https://github.com/jairosousa/aula-git.git
 ```
+
 Pode ver as configurações no arquivo **.git/config**
 
 Agora você pode enviar seu arquivos locais para o remoto
@@ -215,14 +224,13 @@ Agora você pode enviar seu arquivos locais para o remoto
 
 ### Push em outro Branch
 
- 
-
  - Verifique os branch's repositorio local
 
 ```
  > git brunch
 
 ```
+
 - Entre no branch  
 
 
@@ -235,7 +243,6 @@ Agora você pode enviar seu arquivos locais para o remoto
  > git push origin "nome-branch"
 
 ```
-
 
 ```
 Counting objects: 3, done.
@@ -260,20 +267,27 @@ Fazer cópia do repositório em outra pasta ou máquina.
 
 Nesse caso ele só baixou o master
 
+
 para baixar o outro **branch** , primeiro verifique os branch no remoto.
 
 
 ```
-git branch -a
+> git branch -a
 
+```
 ```
 *\*master*
   *remotes/origin/funcionalidade1*
   *remotes/origin/master*
+ ``` 
 
 Você tem criar no seu remoto um branch com o mesmo nome e coloque a referencia remoto depois
 
-<pre> >git checkout -b "nome-branch-local" origin/"nome-branch-remoto"
+
+```
+>git checkout -b "nome-branch-local" origin/"nome-branch-remoto"
+
+```
 
 para verificar se todos os arquivos estão sincronizados:
 
@@ -287,20 +301,26 @@ para verificar se todos os arquivos estão sincronizados:
 
 Vamos simular dois usuário utilizando o repositório
 
+
  - Clonar o repositório em outra pasta exemplo aulagit-clone
+ 
 
 ```
 > git clone https://github.com/jairosousa/aula-git.git
 
 ```
 
+
 No primeiro repositório faça alteração em arquivo exemplo arquivo.txt e depois fazer um **pull** para repositório remoto.
 
+
  **NOTA**: use o branch *master*
+ 
 
 ***Faça os procedimentos para enviar para o repositório remoto***
 
 No outro repositório (Clone) baixe as alterações feitas.
+
 *~/Documents/Cursos/Code-Education/Git/aulagit-clone (master)*
 
 
@@ -324,7 +344,6 @@ Vamos criar novo arquivo nesse **branch**
 > git status
 
 ```
-
 
 ```
 > git add "arquivo-novobranch.txt"
