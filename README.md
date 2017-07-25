@@ -416,6 +416,9 @@ Quando um branch local é removido, isso não significa que o branch remoto tamb
 
 Nesse caso, há um comando específico para que possamos remover um *branch* remoto. Utilize o comando:
 
-<pre> > git push origin **:nome-do-branch**
+```
+ > git push origin **:nome-do-branch**
+ 
+ ```
 
 **Não se esqueça de testar. Ok?**
