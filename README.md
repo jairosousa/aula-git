@@ -88,7 +88,7 @@ Mostra os logs de todos os commits feitos nos últimos dias (no exemplo foi pedi
 ### Desfazendo o ADD
 Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
 
-    >git reset HEAD <<nome do arquivo>>
+    > git reset HEAD <<nome do arquivo>>
 
 ### Voltando  versões
 
@@ -101,18 +101,24 @@ Você desja desfazer um commit dado.
 Author: Jairo Sousa <jaironsousa@gmail.com>
 Date:   Wed Jul 19 21:56:56 2017 -0300*
 
-    <pre> > git checkout f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd.
+```
+     > git checkout f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd.
+```
+
 
 ### Voltando ao estado original
 Vamos imaginar que você possui um arquivo no controle de versão chamado exemplo.php.
 
 Imagine agora que você fez diversas alterações nesse arquivo, porém, por qualquer motivo, você se arrependeu de fazê-las (lembrando que você apenas fez as alterações, mas não as commitou). Para você fazer o conteúdo do arquivo voltar ao estado original, digite:
 
-<pre> > git checkout -- exemplo.php
+```
+ > git checkout -- exemplo.php </pre>
+```
 
 Rodando esse comando, todos as alterações realizadas serão perdidas e o arquivo voltará exatamente como estava antes.
 
 Esse recurso é extremamente útil, porém deve ser usado com cuidado
+
 
 ## BRANCHES
 
@@ -122,7 +128,7 @@ Um desenvolvimento de software possui um linha do tempo principal **“master”
 
 ![imagem01](/img/img-01.PNG)
 
-###Criando o primeiro Branch
+### Criando o primeiro Branch
 
  1. Verifica qual **branch** você está
 
@@ -159,15 +165,16 @@ Date:   Thu Jul 20 08:06:06 2017 -0300
 #### Rebase 
 uni os branch mais **organiza os commits na ordem que eles foram realizados e não cria o commit do merge**
 
-<pre> > git rebase "nome branch que quer fazer o rebase"</pre>
-
-<pre> First, rewinding head to replay your work on top of it...
+```
+> git rebase "nome branch que quer fazer o rebase"
+```
+*First, rewinding head to replay your work on top of it...
 Applying: Adicionando o arquivo texto4.txt
 **Ele acabou de re ordenar a Head (Cabeça) do branh atual**
-</pre>
 
-<pre> > git log
-
+```
+> git log
+```
 Verifique que os commits foram organizados pela ordem e não foi criado um novo commit
 
 ### Removendo um branch
@@ -178,8 +185,10 @@ Remover um branch não significa que você removerá os commits que você realiz
 
 Para remover um branch utilize o comando: 
 
-<pre> > git branch -D "nome-do-branch"
+```
+ > git branch -D "nome-do-branch"
 Teste isso agora mesmo em seu computador!
+````
 
 ## GITHUB
 
@@ -191,13 +200,18 @@ Teste isso agora mesmo em seu computador!
 
  - Primeiro configurar o repositório remoto para Git saber para onde mandar os arquivos.
 
-<pre> > git remote add origin https://github.com/jairosousa/aula-git.git
-
+```
+ > git remote add origin https://github.com/jairosousa/aula-git.git
+```
 Pode ver as configurações no arquivo **.git/config**
 
 Agora você pode enviar seu arquivos locais para o remoto
 
-<pre> > git push origin master
+
+```
+ > git push origin master
+
+```
 
 ### Push em outro Branch
 
@@ -205,14 +219,25 @@ Agora você pode enviar seu arquivos locais para o remoto
 
  - Verifique os branch's repositorio local
 
-<pre> > git brunch
+```
+ > git brunch
 
+```
 - Entre no branch  
 
-<pre> > git checkout "nome-branch"
 
-<pre> > git push origin "nome-branch"
+```
+ > git checkout "nome-branch"
 
+```
+
+```
+ > git push origin "nome-branch"
+
+```
+
+
+```
 Counting objects: 3, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -222,17 +247,26 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/jairosousa/aula-git.git
  * [new branch]      funcionalidade1 -> funcionalidade1
 
+```
+
 ### Clonando
 Fazer cópia do repositório em outra pasta ou máquina.
 
-<pre> > git clone https://github.com/jairosousa/aula-git.git
+
+```
+ > git clone https://github.com/jairosousa/aula-git.git
+
+```
 
 Nesse caso ele só baixou o master
 
 para baixar o outro **branch** , primeiro verifique os branch no remoto.
 
-<pre> git branch -a
 
+```
+git branch -a
+
+```
 *\*master*
   *remotes/origin/funcionalidade1*
   *remotes/origin/master*
@@ -242,14 +276,23 @@ Você tem criar no seu remoto um branch com o mesmo nome e coloque a referencia 
 <pre> >git checkout -b "nome-branch-local" origin/"nome-branch-remoto"
 
 para verificar se todos os arquivos estão sincronizados:
-<pre> > git pull
+
+
+```
+> git pull
+
+```
 
 ### Push e Pull com o novo branch
 
 Vamos simular dois usuário utilizando o repositório
 
  - Clonar o repositório em outra pasta exemplo aulagit-clone
-<pre> > git clone https://github.com/jairosousa/aula-git.git
+
+```
+> git clone https://github.com/jairosousa/aula-git.git
+
+```
 
 No primeiro repositório faça alteração em arquivo exemplo arquivo.txt e depois fazer um **pull** para repositório remoto.
 
@@ -260,24 +303,47 @@ No primeiro repositório faça alteração em arquivo exemplo arquivo.txt e depo
 No outro repositório (Clone) baixe as alterações feitas.
 *~/Documents/Cursos/Code-Education/Git/aulagit-clone (master)*
 
-<pre> > git **pull** origin master
+
+```
+> git **pull** origin master
+
+```
 
 Agora vamos criar um novo **branch** no mesmo repositório.
 
-<pre> > git checkout -b novoBranch
+```
+> git checkout -b novoBranch
+
+```
 *Switched to a new branch 'novoBranch'*
 
 Vamos criar novo arquivo nesse **branch**
 
-<pre> > git status
 
-<pre> > git add "arquivo-novobranch.txt"
+```
+> git status
 
-<pre> > git commit -m "Adicionar arquivo - exemplo de novo branch"
+```
+
+
+```
+> git add "arquivo-novobranch.txt"
+
+```
+
+
+```
+> git commit -m "Adicionar arquivo - exemplo de novo branch"
+
+```
 
 Agora enviar para o repositório remoto
 
-<pre> >git **push** origin novoBranch
+
+```
+>git **push** origin novoBranch
+
+```
 **[new branch]      novoBranch -> novoBranch*
 
 Agora no repositório original
@@ -285,23 +351,39 @@ Agora no repositório original
 
 Verifique os branch
 
-<pre> > git branch
+
+```
+> git branch
+
+```
 * master
 
 Se verificar os btanch remotos 
 
-<pre> >git branch -a
+
+```
+>git branch -a
+
+```
+
 Observe que não apareceu ainda o novoBranch
 
 Para atualizar:
 
-<pre> > git pull
 
+```
+> git pull
+
+```
 Agora para ter acesso a esse __branch__ _(__Nota:__ lembre-se que você está no repositório local inicial no branch master)._
 
 Crie um branch local com mesmo nome do remoto
 
-<pre> > git checkout -b novoBranch origin/novoBranch
+
+```
+> git checkout -b novoBranch origin/novoBranch
+
+```
 *Branch novoBranch set up to track remote branch novoBranch from origin.*
 *Switched to a new branch 'novoBranch'*
 
