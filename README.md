@@ -204,6 +204,10 @@ Teste isso agora mesmo em seu computador!
 ```
 > git remote add origin https://github.com/jairosousa/aula-git.git
 ```
+#### Caso apareça erro de histories usar o comando
+```
+> git merge origin master --allow-unrelated-histories
+```
 
    Pode ver as configurações no arquivo **.git/config**
 
