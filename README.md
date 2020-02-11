@@ -24,86 +24,81 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 
 **Criar arquivos pelo CMD ou Bash**
 
-    > copy NUL arquivo-novobranch.php(cmd)
-    > touch arquivo-novobranch.php (bach)
+ > copy NUL arquivo-novobranch.php(cmd)
+ > touch arquivo-novobranch.php (bach)
 
 *Para editá-los podem usar **bloco de notas**.*
 
 ## **OS TRÊS ESTÁGIOS DE UM COMMIT**
 
-## 1 - Untracked
-
-### *O arquivo está no diretório mas não está no Git *
+** 1 - Untracked**
+*O arquivo está no diretório mas não está no Git *
 
 ```
-    > git status
-    > git diff <<nome do arquivo>> // Verifica as diferenças do arquivo
+> git status
+> git diff <<nome do arquivo>> // Verifica as diferenças do arquivo
 ```
-
-### *verifica o estágios dos arquivos*
+*verifica o estágios dos arquivos*
 
 ## 2 - Changes to be commiterd
 
 *Quando o arquivo é adicionado e começa a fazer parte de um controle de versão.*
 
 ```
-    > git add <<nome do arquivo>> 
-    > git add . // Adiciona todos os arquivos 
+> git add <<nome do arquivo>> 
+> git add . // Adiciona todos os arquivos 
 ```
-
-### *Agora o arquivo está pronto para entrar no controle de versão.*
+*Agora o arquivo está pronto para entrar no controle de versão.*
 
 ## 3 - Unstage
 
-### quando o arquivo passa para o controle de versão ou seja é dado o commit.
+*Quando o arquivo passa para o controle de versão ou seja é dado o commit.
 
 
-## **Commit**
+## Commit
 
 ```
 > git commit -m “meu primeiro commit”  
 ```
 *onde o **"-m"** é para colocar uma mensagem.*
 
-
-## 1. Verifica os commit's dados
+## 1 - Verifica os commit's dados
 
 ```
 > git log 
 ```
 
-## 2. Verifica em cada arquivo comitado o que foi mudado.
+## 2 - Verifica em cada arquivo comitado o que foi mudado.
 
 ```
     > git log -p 
 ```
 
-## 3. Verifica nos dois últimos arquivo comitados o que foi mudado.
+## 3 - Verifica nos dois últimos arquivo comitados o que foi mudado.
 
 ```
     > git log -p -2 
 ```
-### *2 é um índice que indica os últimos arquivos comitado*
+*2 é um índice que indica os últimos arquivos comitado*
 
-
-## 4. Mostra o git log e mais as estatísticas de todos os commits
+## 4 - Mostra o git log e mais as estatísticas de todos os commits
 
 ```
 > git log --stat
 ```
 
-## 5. Mostra todos os commits em uma linha só.
+## 5 - Mostra todos os commits em uma linha só.
 
 ```
 > git log --pretty=oneline
 ```
 
-## 6. Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do commit.
+## 6 - Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do commit.
 ```
 > git log --pretty=format:"%h - %an, %ar : %s"
 ```
 
-## 7. Mostra os logs de todos os commits feitos nos últimos dias .
+## 7 - Mostra os logs de todos os commits feitos nos últimos dias .
 
 ```
 > git log --since=2.days
@@ -111,11 +106,11 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 *(no exemplo foi pedido 2 dias)*
 
 
-## **FLUXO E VERSÕES**
+## FLUXO E VERSÕES
 
 ## 1. Desfazendo o ADD
 
-### Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
+*Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.*
 
 ```
 > git reset HEAD <<nome do arquivo>>
@@ -123,7 +118,7 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 
 ## 2. Voltando versões
 
-## Você deseja desfazer um commit dado.
+*Você deseja desfazer um commit dado.*
 
 ## 2.1 Primeiro verificar o ID do commit a ser desfeito, você pode verificar com o comando:
 
@@ -139,9 +134,11 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 
 ## 3. Voltando ao estado original
 
-## Vamos imaginar que você possui um arquivo no controle de versão chamado exemplo.php.
+*Vamos imaginar que você possui um arquivo no controle de versão chamado exemplo.php.*
 
-## Imagine agora que você fez diversas alterações nesse arquivo, porém, por qualquer motivo, você se arrependeu de fazê-las (lembrando     que você apenas fez as alterações, mas não as commitou). Para você fazer o conteúdo do arquivo voltar ao estado original, digite:
+*Imagine agora que você fez diversas alterações nesse arquivo, porém, por qualquer motivo, você se arrependeu de fazê-las (lembrando     que você apenas fez as alterações, mas não as commitou).*
+
+## Para você fazer o conteúdo do arquivo voltar ao estado original, digite:
 
 ```
 > git checkout -- exemplo.php </pre>
@@ -149,8 +146,7 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 *Rodando esse comando, todos as alterações realizadas serão perdidas e o arquivo voltará exatamente como estava antes.*
 *Esse recurso é extremamente útil, porém deve ser usado com cuidado*
 
-
-## **BRANCHES**
+## BRANCHES
 
 ## 1. Entendendo os Branches
 
@@ -201,7 +197,6 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
  </pre>
 
 ## 3.2. Rebase 
-
 *Uni os branch mais **organiza os commits na ordem que eles foram realizados e não cria o commit do merge** *
 
 ```
@@ -211,7 +206,6 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 Applying: Adicionando o arquivo texto4.txt
 **Ele acabou de re ordenar a Head (Cabeça) do branh atual**
 ```
-
 ### Verifique que os commits foram organizados pela ordem e não foi criado um novo commit
 
 ```
@@ -229,22 +223,18 @@ Applying: Adicionando o arquivo texto4.txt
 ```
 > git branch -D "nome-do-branch"
 ````
-
-*Teste isso agora mesmo em seu computador!*
+### *Teste isso agora mesmo em seu computador!*
 
 # GITHUB
 
 *É um serviço online de repositórios **Git** *
-
-## Executar o procedimento de criação do repositório remoto
-
-## Fazendo o primeiro push
 
 ## Primeiro configurar o repositório remoto para **Git** saber para onde mandar os arquivos.
  
 ```
 > git remote add origin https://github.com/jairosousa/aula-git.git
 ```
+
 ## Caso apareça erro de histories usar o comando
 
 ```
@@ -252,7 +242,7 @@ Applying: Adicionando o arquivo texto4.txt
 ```
 ### Pode ver as configurações no arquivo **.git/config**
 
-## Agora você pode enviar seu arquivos locais para o remoto
+### Agora você pode enviar seu arquivos locais para o remoto
 
 ```
 > git push origin master
@@ -260,25 +250,25 @@ Applying: Adicionando o arquivo texto4.txt
 
 ## Push em outra Branch
 
-## Verifique os branch's repositorio local
+## 1. Verifique os branch's repositorio local
 
 ```
 > git brunch
 ```
         
-## Verifique todos as branch's local e remoto
+## 2. Verifique todos as branch's local e remoto
 
 ```
 > git brunch -a
 ```
 
-## Mudar Entre no branch 
+## 3. Mudar Entre as branch 
 
 ```
 > git checkout "nome-branch"
 ```
 
-## Push para branch especifica
+## 4. Push para branch especifica
 ```
 > git push origin "nome-branch"
 ```
@@ -386,7 +376,7 @@ Agora enviar para o repositório remoto
    Agora no repositório original
    _~/Documents/Cursos/Code-Education/Git/aulagit (**master**)_
 
-   Verifique os branch
+ ### Verifique os branch
 
 ```
 > git branch
@@ -406,9 +396,7 @@ Agora enviar para o repositório remoto
 > git fatch
 ```
 
-## Agora para ter acesso a esse __branch__ _(__Nota:__ lembre-se que você está no repositório local inicial no branch master)._
-
-## Crie um branch local com mesmo nome do remoto
+## Agora para ter acesso a esse __branch__ _(__Nota:__ lembre-se que você está no repositório local inicial no branch master)._ Crie um branch local com mesmo nome do remoto
 
 ```
 > git checkout -b novoBranch origin/novoBranch
@@ -418,7 +406,7 @@ Agora enviar para o repositório remoto
 **Branch novoBranch set up to track remote branch novoBranch from origin.**
 **Switched to a new branch 'novoBranch'**
 
-Passa acessar esse novo branch
+### Passa acessar esse nova branch
 **~/Documents/Cursos/Code-Education/Git/aulagit(**novoBranch**)$**
 
 ### Removendo branch remoto
@@ -436,7 +424,8 @@ _**Dica para você!**_
 
  **Não se esqueça de testar. Ok?**
  
-## **PULL REQUEST** (Travis)
+ 
+# PULL REQUEST (Travis)
 
 ## 1 - Criar nova branch no repositorio a partir da master
 
@@ -464,5 +453,10 @@ _**Dica para você!**_
 
 ## 7 - Após os teste no travis e estiver tudo ok, faça o **merge request** com o master click em Merge pull request
 
+<br>
+<br>
+<br>
+<br>
 
-## *Create By:* ***Jairo Nascimento***
+{c:silver}*Create By:* ***Jairo Nascimento***.{/c}
+
