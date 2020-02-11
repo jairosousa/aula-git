@@ -453,10 +453,10 @@ _**Dica para você!**_
 
 ## 7 - Após os teste no travis e estiver tudo ok, faça o **merge request** com o master click em Merge pull request
 
-<br>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
+<br/>
 
-{c:silver}*Create By:* ***Jairo Nascimento***.{/c}
+*Create By:* ***Jairo Nascimento***
 
