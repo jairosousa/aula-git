@@ -395,24 +395,25 @@ _**Dica para você!**_
  
 ## Pull Request (Travis)
 
-### 1 - Criar nova branch no repositorio a partir da master
+1. Criar nova branch no repositorio a partir da master
 
 > git push origin master:travis-test
 
-### 2 - Mudar para nova branch
+2. Mudar para nova branch
 
 > git checkout travis-test
 
-### 3 - Faça alterações no projeto
+3. Faça alterações no projeto
 
-### 4 - commit para nova branch
+4. Commit para nova branch
+
 > git push origin nova-branch
 
-### 5 - No repositorio remoto acesse a nova branch e click em new pull-request
+5. No repositorio remoto acesse a nova branch e click em new pull-request
 
-### 6 - escreva uma descrição da alteração e click em create pull request
+6. Escreva uma descrição da alteração e click em create pull request
 
-### 7 - Após os teste no travis e estiver tudo ok, faça o merge request com o master click em Merge pull request
+7. Após os teste no travis e estiver tudo ok, faça o merge request com o master click em Merge pull request
 
 
 ## Jairo Nascimento
