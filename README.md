@@ -2,10 +2,10 @@
 
 ## PRIMEIROS PASSOS
 *Verificar se GIT está instalado*
-    
-    ```
-    > git
-    ```
+
+```
+> git
+```
     
 ## PREPARANDO O AMBIENTE
 > - Criar repositório (pasta que vai guardar todos os arquivos do projeto)
@@ -14,23 +14,20 @@
 
 ## INCIALIZANDO OU CRIAR DIRETÓRIO _GIT_
     
-    ```
-    > git init (cria diretório .git )
-    ```
-### **Agora já possui diretório configurado pelo Git**
+```
+> git init // Cria diretório .git
+```
 
 _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coisa no arquivo._
 
 **Ajuda! :+1:**
 
-### **Criar arquivos pelo CMD ou Bash**
+**Criar arquivos pelo CMD ou Bash**
 
-    ```
     > copy NUL arquivo-novobranch.php(cmd)
     > touch arquivo-novobranch.php (bach)
-    ```
 
-### Para editá-los podem usar bloco de notas.
+*Para editá-los podem usar **bloco de notas**.*
 
 ## **OS TRÊS ESTÁGIOS DE UM COMMIT**
 
@@ -60,67 +57,75 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 
 ### quando o arquivo passa para o controle de versão ou seja é dado o commit.
 
-## Commit
+
+## **Commit**
 
 ```
-    > git commit -m “meu primeiro commit”  
+> git commit -m “meu primeiro commit”  
 ```
-### onde o **"-m"** é para colocar uma mensagem.
+*onde o **"-m"** é para colocar uma mensagem.*
+
+
+## 1. Verifica os commit's dados
 
 ```
-    > git log 
+> git log 
 ```
 
-## Verifica os commit's dados
+## 2. Verifica em cada arquivo comitado o que foi mudado.
+
 ```
     > git log -p 
 ```
 
-## Verifica em cada arquivo comitado o que foi mudado.
+## 3. Verifica nos dois últimos arquivo comitados o que foi mudado.
+
 ```
     > git log -p -2 
 ```
-### (2 é um índice que indica os últimos arquivos comitado) => verifica nos dois últimos arquivo comitados o que foi mudado.
+### *2 é um índice que indica os últimos arquivos comitado*
+
+
+## 4. Mostra o git log e mais as estatísticas de todos os commits
 
 ```
-    > git log --stat
+> git log --stat
 ```
 
-## Mostra o git log e mais as estatísticas de todos os commits
+## 5. Mostra todos os commits em uma linha só.
 
 ```
-    > git log --pretty=oneline
+> git log --pretty=oneline
 ```
 
-## Mostra todos os commits em uma linha só.
-
+## 6. Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do commit.
 ```
-    > git log --pretty=format:"%h - %an, %ar : %s"
-```
-
-## Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do commit.
-
-```
-    > git log --since=2.days
+> git log --pretty=format:"%h - %an, %ar : %s"
 ```
 
-## Mostra os logs de todos os commits feitos nos últimos dias (no exemplo foi pedido 2 dias).
+## 7. Mostra os logs de todos os commits feitos nos últimos dias .
+
+```
+> git log --since=2.days
+```
+*(no exemplo foi pedido 2 dias)*
+
 
 ## **FLUXO E VERSÕES**
 
-## Desfazendo o ADD
+## 1. Desfazendo o ADD
 
-###Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
+### Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.
 
 ```
-    > git reset HEAD <<nome do arquivo>>
+> git reset HEAD <<nome do arquivo>>
 ```
 
-## Voltando  versões
+## 2. Voltando versões
 
-### Você deseja desfazer um commit dado.
+## Você deseja desfazer um commit dado.
 
-### primeiro verificar o ID do commit a ser desfeito, você pode verificar com o comando:
+## 2.1 Primeiro verificar o ID do commit a ser desfeito, você pode verificar com o comando:
 
 <pre> > git log *(deve pegar o ID da versão que voce quer voltar)*
     *commit* *f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd* <=**Este é ID**
@@ -132,52 +137,52 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
     > git checkout f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd.
 ```
 
-## Voltando ao estado original
+## 3. Voltando ao estado original
 
-### Vamos imaginar que você possui um arquivo no controle de versão chamado exemplo.php.
+## Vamos imaginar que você possui um arquivo no controle de versão chamado exemplo.php.
 
-### Imagine agora que você fez diversas alterações nesse arquivo, porém, por qualquer motivo, você se arrependeu de fazê-las (lembrando     que você apenas fez as alterações, mas não as commitou). Para você fazer o conteúdo do arquivo voltar ao estado original, digite:
+## Imagine agora que você fez diversas alterações nesse arquivo, porém, por qualquer motivo, você se arrependeu de fazê-las (lembrando     que você apenas fez as alterações, mas não as commitou). Para você fazer o conteúdo do arquivo voltar ao estado original, digite:
 
 ```
 > git checkout -- exemplo.php </pre>
 ```
-### Rodando esse comando, todos as alterações realizadas serão perdidas e o arquivo voltará exatamente como estava antes.
-### Esse recurso é extremamente útil, porém deve ser usado com cuidado
+*Rodando esse comando, todos as alterações realizadas serão perdidas e o arquivo voltará exatamente como estava antes.*
+*Esse recurso é extremamente útil, porém deve ser usado com cuidado*
 
 
 ## **BRANCHES**
 
-## Entendendo os Branches
+## 1. Entendendo os Branches
 
-### Um desenvolvimento de software possui um linha do tempo principal **“master”** e os **branches** são ramificações dessa linha do    tempo que pode ser criando pedaços do software sem alterar a linha do tempo principal, existe também branches de branches.
+*Um desenvolvimento de software possui um linha do tempo principal **“master”** e os **branches** são ramificações dessa linha do    tempo que pode ser criando pedaços do software sem alterar a linha do tempo principal, existe também branches de branches.*
 
 ![imagem01](/img/img-01.PNG)
 
-## Criando o primeiro Branch
+## 2. Criando o primeiro Branch
 
-## 1. Verifica qual **branch** você está
+## 2.1. Verifica qual **branch** você está
 
 ```
   > git branch  // Exemplo master</pre>
 ```
 
-## 2. Criar Branch
+## 2.2. Criar Branch
 
 ```
   > git checkout -b <<"nome do branch">> 
 ```
 
-## 3. Para voltar branch *master*
+## 2.3. Para voltar branch *master*
 
 ```
  > git checkout master
 ```
 
-## **Merge e Rebase**
+## 3. Merge e Rebase
 
-## Merge
+## 3.1. Merge
 
-### Uni os branch e **cria um novo commit** no branch atual. 
+*Uni os branch e **cria um novo commit** no branch atual. *
 
 ```
  > git merge <<"nome branch">> que quer fazer o **merge**
@@ -195,9 +200,9 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
  Date:   Thu Jul 20 08:06:06 2017 -0300
  </pre>
 
-## Rebase 
+## 3.2. Rebase 
 
-### Uni os branch mais **organiza os commits na ordem que eles foram realizados e não cria o commit do merge**
+*Uni os branch mais **organiza os commits na ordem que eles foram realizados e não cria o commit do merge** *
 
 ```
  > git rebase <<"nome branch que quer fazer o rebase">>
@@ -213,21 +218,21 @@ Applying: Adicionando o arquivo texto4.txt
 > git log
 ```
 
-## Removendo um branch
+## 4. Removendo um branch
 
-### Após uma funcionalidade ser desenvolvida e o merge realizado, você poderá optar por remover o branch. É isso mesmo =)
+*Após uma funcionalidade ser desenvolvida e o merge realizado, você poderá optar por remover o branch. É isso mesmo =)*
 
-### Remover um branch não significa que você removerá os commits que você realizou, pois o merge já foi feito.
+*Remover um branch não significa que você removerá os commits que você realizou, pois o merge já foi feito.*
 
-### Para remover um branch utilize o comando: 
+## 4.1 Para remover um branch
 
 ```
 > git branch -D "nome-do-branch"
 ````
 
-### Teste isso agora mesmo em seu computador!
+*Teste isso agora mesmo em seu computador!*
 
-## **GITHUB**
+# GITHUB
 
 *É um serviço online de repositórios **Git** *
 
@@ -245,7 +250,6 @@ Applying: Adicionando o arquivo texto4.txt
 ```
 > git merge origin master --allow-unrelated-histories
 ```
-
 ### Pode ver as configurações no arquivo **.git/config**
 
 ## Agora você pode enviar seu arquivos locais para o remoto
@@ -297,7 +301,6 @@ To https://github.com/jairosousa/aula-git.git
 ```
 > git clone https://github.com/jairosousa/aula-git.git
 ```
-
 ### Nesse caso foi clonado da branch **master**
 
 ## Para baixar o outro **branch** , primeiro verifique os branch no remoto.
@@ -327,11 +330,11 @@ To https://github.com/jairosousa/aula-git.git
 
 ## Push e Pull com o novo branch
 
-## *Vamos simular dois usuário utilizando o repositório*
-## *Clonar o repositório em outra pasta exemplo aulagit-clone*
+*Vamos simular dois usuário utilizando o repositório*
+*Clonar o repositório em outra pasta exemplo aulagit-clone*
  
 ```
-   > git clone https://github.com/jairosousa/aula-git.git
+> git clone https://github.com/jairosousa/aula-git.git
 ```
 
 ## No primeiro repositório faça alteração em arquivo exemplo arquivo.txt e depois fazer um **pull** para repositório remoto.
