@@ -1,462 +1,197 @@
-# **Bem Vindo ao Curso de Git!**
+# Comandos Básicos Git
 
-## PRIMEIROS PASSOS
-*Verificar se GIT está instalado*
+## Chave SSH e documentação Git
+ 
+ [Gerar nova chave ssh](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-```
-> git
-```
-    
-## PREPARANDO O AMBIENTE
-> - Criar repositório (pasta que vai guardar todos os arquivos do projeto)
-> - mkdir aulagit (cria pasta onde vai ficar arquivos do projeto)
-> - cd aulagit (acessar a pasta)
+ ## Criando o Primeiro Repósitorio
 
-## INCIALIZANDO OU CRIAR DIRETÓRIO _GIT_
-    
-```
-> git init // Cria diretório .git
+ ```console
+ > git init PrimeiroRepo
 ```
 
-_criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coisa no arquivo._
+* Será criado o diretorio configurado como repositorio **GIT**.
 
-**Ajuda! :+1:**
+* Todas as configurações do repositorio ficam na pasta _.git_
 
-**Criar arquivos pelo CMD ou Bash**
+* Crie um arquivo, edite e adicione ao repositorio:
+ ```console
+ > gedit PrimeiroArquivo
 
- > copy NUL arquivo-novobranch.php(cmd)
- > touch arquivo-novobranch.php (bach)
+ > git add PrimeiroArquivo
 
-*Para editá-los podem usar **bloco de notas**.*
+ > git commit -m "Criado o primeiro arquivo."
+ ```
 
-## **OS TRÊS ESTÁGIOS DE UM COMMIT**
+ # Configurando
 
-** 1 - Untracked**
-*O arquivo está no diretório mas não está no Git *
+ * Configure seu nome e e-mail:
+ ```console
+ > git config --global user.name "Meu user Name"
 
-```
-> git status
-> git diff <<nome do arquivo>> // Verifica as diferenças do arquivo
-```
-*verifica o estágios dos arquivos*
+ > git config --global user.email "meuemail@email.com"
+ ```
 
-## 2 - Changes to be commiterd
+ > o comando _--global_ configura localmente o usuario e email para todos os projetos Git criado em sua máquina se não colocar o _--global_ ele cria para apenas o projeto especidico.
 
-*Quando o arquivo é adicionado e começa a fazer parte de um controle de versão.*
+ ## Editor View
 
-```
-> git add <<nome do arquivo>> 
-> git add . // Adiciona todos os arquivos 
-```
-*Agora o arquivo está pronto para entrar no controle de versão.*
+ * editor padrão do git para editar mensagem commit
 
-## 3 - Unstage
+ INSERÇÃO :
 
-*Quando o arquivo passa para o controle de versão ou seja é dado o commit.
+ SAIR E SALVAR :WQ
 
+ ## Git Status e Log
 
-## Commit
-
-```
-> git commit -m “meu primeiro commit”  
-```
-*onde o **"-m"** é para colocar uma mensagem.*
-
-## 1 - Verifica os commit's dados
-
-```
-> git log 
+ * Comando para ver o status do repositório
+```console
+> git statua
 ```
 
-## 2 - Verifica em cada arquivo comitado o que foi mudado.
-
-```
-    > git log -p 
-```
-
-## 3 - Verifica nos dois últimos arquivo comitados o que foi mudado.
-
-```
-    > git log -p -2 
-```
-*2 é um índice que indica os últimos arquivos comitado*
-
-## 4 - Mostra o git log e mais as estatísticas de todos os commits
-
-```
-> git log --stat
-```
-
-## 5 - Mostra todos os commits em uma linha só.
-
-```
-> git log --pretty=oneline
-```
-
-## 6 - Mostra o início do Rest, quem commitou, quanto tempo atrás, e a descrição do commit.
-```
-> git log --pretty=format:"%h - %an, %ar : %s"
-```
-
-## 7 - Mostra os logs de todos os commits feitos nos últimos dias .
-
-```
-> git log --since=2.days
-```
-*(no exemplo foi pedido 2 dias)*
-
-
-## FLUXO E VERSÕES
-
-## 1. Desfazendo o ADD
-
-*Quando você esta no segundo estagio e quer voltar para o primeiro, ou seja, tirar o arquivo de condições de ser commitado.*
-
-```
-> git reset HEAD <<nome do arquivo>>
-```
-
-## 2. Voltando versões
-
-*Você deseja desfazer um commit dado.*
-
-## 2.1 Primeiro verificar o ID do commit a ser desfeito, você pode verificar com o comando:
-
-<pre> > git log *(deve pegar o ID da versão que voce quer voltar)*
-    *commit* *f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd* <=**Este é ID**
-    Author: Jairo Sousa <jaironsousa@gmail.com>
-    Date:   Wed Jul 19 21:56:56 2017 -0300*
-</pre>
-
-```
-    > git checkout f724b698a2c6ae3db03cd5c2ad86d0b4af8c32dd.
-```
-
-## 3. Voltando ao estado original
-
-*Vamos imaginar que você possui um arquivo no controle de versão chamado exemplo.php.*
-
-*Imagine agora que você fez diversas alterações nesse arquivo, porém, por qualquer motivo, você se arrependeu de fazê-las (lembrando     que você apenas fez as alterações, mas não as commitou).*
-
-## Para você fazer o conteúdo do arquivo voltar ao estado original, digite:
-
-```
-> git checkout -- exemplo.php </pre>
-```
-*Rodando esse comando, todos as alterações realizadas serão perdidas e o arquivo voltará exatamente como estava antes.*
-*Esse recurso é extremamente útil, porém deve ser usado com cuidado*
-
-## BRANCHES
-
-## 1. Entendendo os Branches
-
-*Um desenvolvimento de software possui um linha do tempo principal **“master”** e os **branches** são ramificações dessa linha do    tempo que pode ser criando pedaços do software sem alterar a linha do tempo principal, existe também branches de branches.*
-
-![imagem01](/img/img-01.PNG)
-
-## 2. Criando o primeiro Branch
-
-## 2.1. Verifica qual **branch** você está
-
-```
-  > git branch  // Exemplo master</pre>
-```
-
-## 2.2. Criar Branch
-
-```
-  > git checkout -b <<"nome do branch">> 
-```
-
-## 2.3. Para voltar branch *master*
-
-```
- > git checkout master
-```
-
-## 3. Merge e Rebase
-
-## 3.1. Merge
-
-*Uni os branch e **cria um novo commit** no branch atual. *
-
-```
- > git merge <<"nome branch">> que quer fazer o **merge**
-```
-<code><strong>console:<strong></code>
- <pre>Merge made by the 'recursive' strategy.
- funcionalidades.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 funcionalidades.txt
- c:\cursos\Code-Education\cursogit (master)
- ? git log
- commit 0a991602725ab938052dd2338cf88dbaf7852d64 (HEAD -> master)
- Merge: ced6aad e94632d
- Author: Jairo Sousa <jaironsousa@gmail.com>
- Date:   Thu Jul 20 08:06:06 2017 -0300
- </pre>
-
-## 3.2. Rebase 
-*Uni os branch mais **organiza os commits na ordem que eles foram realizados e não cria o commit do merge** *
-
-```
- > git rebase <<"nome branch que quer fazer o rebase">>
-
-*First, rewinding head to replay your work on top of it...
-Applying: Adicionando o arquivo texto4.txt
-**Ele acabou de re ordenar a Head (Cabeça) do branh atual**
-```
-### Verifique que os commits foram organizados pela ordem e não foi criado um novo commit
-
-```
+* Ver último commits no repositório
+```console
 > git log
 ```
 
-## 4. Removendo um branch
+## Criar um repositório remoto
 
-*Após uma funcionalidade ser desenvolvida e o merge realizado, você poderá optar por remover o branch. É isso mesmo =)*
+* Crie um repositorio no GitHub.
 
-*Remover um branch não significa que você removerá os commits que você realizou, pois o merge já foi feito.*
+* Configure o repositório remoto.
 
-## 4.1 Para remover um branch
+* Crie um arquivo README.md
 
+* Faça o upload das alterações.
+
+```console
+> git remote add origin <url>
 ```
-> git branch -D "nome-do-branch"
-````
-### *Teste isso agora mesmo em seu computador!*
+* Comando para listar os remotes
 
-# GITHUB
-
-*É um serviço online de repositórios **Git** *
-
-## Primeiro configurar o repositório remoto para **Git** saber para onde mandar os arquivos.
- 
-```
-> git remote add origin https://github.com/jairosousa/aula-git.git
+```console
+> git remote -v
 ```
 
-## Caso apareça erro de histories usar o comando
-
+## Git Add
+```console
+> git add <lista de arquivos>
 ```
-> git merge origin master --allow-unrelated-histories
-```
-### Pode ver as configurações no arquivo **.git/config**
-
-### Agora você pode enviar seu arquivos locais para o remoto
-
-```
-> git push origin master
+* Adiciona os arquivos novos e modificados para o próximo commit.
+```console
+> git add .
 ```
 
-## Push em outra Branch
+## Git Commit
 
-## 1. Verifique os branch's repositorio local
+```console
+> git commit [-m "menssage"]
+```
+* Registra o commit com todos os arquivos que usou _git add_
 
-```
-> git brunch
-```
-        
-## 2. Verifique todos as branch's local e remoto
-
-```
-> git brunch -a
+* Se o parâmetro de mensagem não for passado abrirá um editor de texto para escrever a mensagem.
+```console
+> git config --global core.editor gedit
 ```
 
-## 3. Mudar Entre as branch 
+## Git Push
 
-```
-> git checkout "nome-branch"
-```
+* Envia alterações (commits) de uma branch para repositório remoto.
 
-## 4. Push para branch especifica
-```
-> git push origin "nome-branch"
-```
+* A primeira vez:
 
-<code><strong>console:<strong></code>
+```console
+> git push -u origin master
 ```
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 305 bytes | 0 bytes/s, done.
-Total 3 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/jairosousa/aula-git.git
-* [new branch]      funcionalidade1 -> funcionalidade1
-```
+* O envio é rejeitado se o repositório não estiver sincronizado.
 
-## Clonando
-   *Fazer cópia do repositório em outra pasta ou máquina.*
-
+```console
+> git push <remote> <branch>
 ```
-> git clone https://github.com/jairosousa/aula-git.git
+* Sincronizar a branch para repositorio remoto
+```console
+> git push --set-upstream origin master
 ```
-### Nesse caso foi clonado da branch **master**
-
-## Para baixar o outro **branch** , primeiro verifique os branch no remoto.
-
-```
-> git branch -a
+* No proximo commit poderá utilizar somento o _git push_
+```console
+> git push
 ```
 
-<code><strong>console:<strong></code>
-```
-*\*master*
-*remotes/origin/funcionalidade1*
-*remotes/origin/master*
- ```
+## Git Workflow
 
-## Você tem criar no seu remoto uma **branch** com o mesmo nome e coloque a referencia remoto depois
+* Basicamente a maior parte do trabalho com o _git_ consiste nestas tarefas:
 
+  - Editar
+  - Commitar
+  - Sincronizar com o repositório remoto
+
+* Exercite estes comandos!  
+
+## Status dos Arquivos
+
+* Edite o arquivo criado anteriormenrte.
+
+* Crie um novo arquivo e veja o seu status no repositorio
+
+## Estados dos Arquivos
+
+* Não monitorado (untracked)
+
+    - Quando agente cria algum arquivo
+
+* Modificado (modified)
+    - Quando modifica um arquivo que já esteja no repositório.
+
+* Preparado (staged)
+    - Quando executamos o comando _git add ._
+
+* Consolidado (commited)
+    - Quando executamos o comando _git commit_
+
+![imagem 01](img01.png)    
+
+## Diff
+* Exibe diferenças entre commits e branchs
+```console
+> git diff
 ```
-> git checkout -b <<"nome-branch-local">> origin/"nome-branch-remoto"
+* Deferença no diretório
+```console
+> git diff [path]
+```
+* Mostra o que foi alterado no último commit.
+```console
+> git diff HEAD~1
+```
+* Ver diff no GitHub
+
+# Git Clone
+* Baixa o repositório remoto.
+* Outra forma de criar um repositório local.
+
+* Já vem com o remoto configurado.
+```console
+> git clone <URL>
 ```
 
-## Para verificar se todos os arquivos estão sincronizados:
+# Git Pull
 
-```
+* Baixa as alterações do repositorio remoto.
+
+* Mantém o repositorio sincronizados com os últimos commits de uma branch.
+```console
 > git pull
 ```
 
-## Push e Pull com o novo branch
-
-*Vamos simular dois usuário utilizando o repositório*
-*Clonar o repositório em outra pasta exemplo aulagit-clone*
- 
-```
-> git clone https://github.com/jairosousa/aula-git.git
-```
-
-## No primeiro repositório faça alteração em arquivo exemplo arquivo.txt e depois fazer um **pull** para repositório remoto.
 
 
-### **NOTA**: use o branch _**master**_
- 
-## *Faça os procedimentos para enviar para o repositório remoto*
 
-## No outro repositório (Clone) baixe as alterações feitas.
 
-   _~/Documents/Cursos/Code-Education/Git/aulagit-clone (master)_
+
+
+
+
+
+```console
 
 ```
-   > git **pull** origin master
-```
-
-## Agora vamos criar um novo **branch** no mesmo repositório.
-
-```
-> git checkout -b novoBranch
-```
-<code><strong>console:<strong></code>
-   _Switched to a new branch 'novoBranch'+
-
-Vamos criar novo arquivo nesse **branch**
-
-```
-> git status
-```
-
-```
-> git add "arquivo-novobranch.txt"
-```
-
-```
-> git commit -m "Adicionar arquivo - exemplo de novo branch"
-
-```
-
-Agora enviar para o repositório remoto
-
-```
->git **push** origin novoBranch
-
-```
-   **[new branch]      novoBranch -> novoBranch*
-
-   Agora no repositório original
-   _~/Documents/Cursos/Code-Education/Git/aulagit (**master**)_
-
- ### Verifique os branch
-
-```
-> git branch
-> master
-```
-
-## Se verificar os branch remotos 
-
-```
-> git branch -a    
-```
-                
-### Observe que não apareceu ainda o novoBranch
-### Para atualizar:
-
-```
-> git fatch
-```
-
-## Agora para ter acesso a esse __branch__ _(__Nota:__ lembre-se que você está no repositório local inicial no branch master)._ Crie um branch local com mesmo nome do remoto
-
-```
-> git checkout -b novoBranch origin/novoBranch
-```
-<code><strong>console:<strong></code>
-    
-**Branch novoBranch set up to track remote branch novoBranch from origin.**
-**Switched to a new branch 'novoBranch'**
-
-### Passa acessar esse nova branch
-**~/Documents/Cursos/Code-Education/Git/aulagit(**novoBranch**)$**
-
-### Removendo branch remoto
-_**Dica para você!**_
-
-   > Quando um branch local é removido, isso não significa que o branch remoto também será.
-   > Nesse caso, há um comando específico para que possamos remover um ***branch*** remoto. Utilize o comando:
-            
- ```
- > git branch -m old_branch new_branch         // Renomeia branch localmente    
- > git push origin :old_branch                 // Delete a old branch    
- > git push --set-upstream origin new_branch   // Push the new branch, set local branch to track the new remote
-
- ```
-
- **Não se esqueça de testar. Ok?**
- 
- 
-# PULL REQUEST (Travis)
-
-## 1 - Criar nova branch no repositorio a partir da master
-
-```
-> git push origin master:travis-test
-```
-
-## 2 - Mudar para nova branch
-
-```
-> git checkout travis-test
-```
-
-## 3 - Faça alterações no projeto
-
-## 4 - Commit para nova branch
-
-```
-> git push origin nova-branch
-``` 
-
-## 5 - No repositorio remoto acesse a nova branch e click em new pull-request
-
-## 6 - Escreva uma descrição da alteração e click em create pull request
-
-## 7 - Após os teste no travis e estiver tudo ok, faça o **merge request** com o master click em Merge pull request
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-*Create By:* ***Jairo Nascimento***
-
