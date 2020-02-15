@@ -183,15 +183,77 @@
 > git pull
 ```
 
+## Navegar no Histórico
 
-
-
-
-
-
-
-
-
+* Permite ver como um arquivo ou todo o repositorio estava em um determinado commit.
 ```console
+> git checkout <commit> <file>
+```
 
+## Git Checkout
+* Altera o repositório para o estado daquele commit.
+
+* Útil para fazer testes antes e depois de alterações.
+```console
+> git checkout <commit>
+```
+
+* Para voltar o repositório no último commit.
+```console
+> git checkout master
+```
+
+## Desfazendo Alterações
+
+* Irá desfazer todas as alterações que não estejam no Stage desde o último commit.
+```console
+> git checkout -- <path_or_file>
+```
+
+* Desfazer as alterações desde o último commit incluíndo o Stage.
+```console
+> git checkout HEAD  -- <path_file>
+```
+
+* Descartar as mudanças do arquivo
+```console
+> git checkout -- <name_of_file>
+```
+
+* Descarta todas as modificações de todos asquivos modificados.
+```console
+> git checkout -- .
+```
+
+* Descarta as modificações mesmo depois do _git add_
+```console
+> git checkout HEAD  -- <name_ile>
+```
+
+## Git Revert
+
+* Irá criar um novo commit que desfaz as alterações do commit especificado.
+
+* Útil para desfazer um commit antigo
+```console
+> git revert <commit>
+```
+
+## Git Reset
+
+* Resetar o repositório para um determinado commit.
+```console
+> git reset <commit>
+```
+
+* Resetar e remover todas as alterações.
+  - Cuidado ao usar! Não usar se já estiver publicado.
+
+* Útil para desfazer últimos commits.  
+```console
+> git reset --hard <commit>
+
+> git reset HEAD~1 // remove o ultimo commit, mas fica em stats os arquivos modificados permanecem
+
+> git reset HEAD~1 --hard // remove o ultimo commit, e as modificações.
 ```
