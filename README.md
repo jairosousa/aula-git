@@ -257,3 +257,104 @@
 
 > git reset HEAD~1 --hard // remove o ultimo commit, e as modificações.
 ```
+
+## Conflitos
+
+* Conflitos podem acontecer ao unirmos altaerações.
+
+* Acontecem quando versões diferentes possuem as mesmas linhas nos mesmos arqivos editados diferentes.
+
+* O Git identifica os conflitos e fica aguardando a solução deles.
+
+* Ao remover os conflitos deve ser feito um commit.
+
+# Branching
+* Criando ramificações no repositório
+
+## Branch
+
+* É uma lista de commits.
+
+* Representa ramificações do repositório.
+
+* Muito útil para trabalhos colaborativos.
+
+* Branchs de desencolvimento facilitam o controle.
+
+* Branch master é a padrão.
+
+```console
+> git branch
+```
+
+* Cria uma nova branch
+```console
+> git branch <nova_branch>
+```
+
+* Exclui uma branch
+```console
+> git branch -d <branch>
+```
+
+## Git Checkout Branch
+
+* Muda para branch
+```console
+> git checkout <branch>
+```
+* Seu repositório passa a ter os commits que a branch possui e novo commits serão adicionados à ela.
+
+## Git Merge
+```console
+> git merge <branch>
+```
+ * Aplicar os commits de uma branch na branch atual.
+
+* Encontra um commit comum(base) entre as branchs e aplica todos os commits que a branch atual não pussui.
+
+* Caso existam commits na branch atual que não estão na outra, será criado um commit de merge.
+
+# Git Rebase
+```console
+> git rebase <branch>
+```
+* Semelhante ao **Merge** porém é diferente na ordem de apliar os commits.
+
+* No **Rebase**, os seus commits na frente da base são removidos temporariamente, os commits de uma outra branch são aplicados na sua branch e por fim seus commits são aplicados um a um.
+
+* Pode acontecer conflitos que serão resolvidos para cada commit.
+
+## Git Fetch
+```console
+> git fetch
+```
+* Baixa as atualizações do remote porém não aplica elas no repositório.
+
+* Permite fazer o rebase de uma branch em vez de fazer o merge.
+
+*  **Pull = Fetch _ Merge**
+
+* Fetch é melhor para manter histórico do desenvolvimento.
+
+### Exercicio
+
+* Com branch master sicronizadas você e seu par devem fazer commits na master.
+
+* Seu par eve fazer o push dos commits dele.
+
+* Antes de você fazer o push dos seus commits deve fazer o rebase com os commits do seu par.
+
+## Tag
+
+* Útil para definir versões estáveis do projeto.
+
+* Semelhante a branch porém não recebe mais commits.
+
+* Guarda um estado do repositório.
+
+```console
+> git tag [nome da tag]
+
+> git push <remote> <tag>
+
