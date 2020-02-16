@@ -148,7 +148,7 @@
 * Consolidado (commited)
     - Quando executamos o comando _git commit_
 
-![imagem 01](img01.png)    
+![imagem 01](img01.PNG)    
 
 ## Diff
 * Exibe diferenças entre commits e branchs
@@ -357,4 +357,3 @@
 > git tag [nome da tag]
 
 > git push <remote> <tag>
-
