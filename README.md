@@ -46,7 +46,7 @@
 
  * Comando para ver o status do repositório
 ```console
-> git statua
+> git status
 ```
 
 * Ver último commits no repositório
@@ -357,3 +357,40 @@
 > git tag [nome da tag]
 
 > git push <remote> <tag>
+```
+
+## Fork no GitHub
+
+* Copia um repositorio de outro usuário para o seu usuaáriop no GitHub.
+
+* É assim que começa a contribuição para outros projetos.
+
+* Você teria uma cópia independente do repositório original, podendo fazer quaiquer alterações.
+
+## Issues no GitHub
+
+* Tradução: Questões.
+
+* Reportar bugs.
+
+*Organizar tarefas a serem feitas.
+
+* Permite duscussão entre usuários.
+  - Commit: "Closes #3"
+
+## [Pull Request](https://guides.github.com/introduction/flow/)
+
+* O Grande simbolo de colaboração.
+
+* É quando voçê solicita que sua alterações sejam unidas a uma branch no mesmo repositório ou a um repositório que sofreu o **fork**.
+
+* Igual uma **Issue** porém com uma branch associada.
+
+* Muito útil para o trabalho colaborativo.
+
+## Checkout em Pull Request
+
+```console
+> git fetch origin pull/ID/head:BRANCH
+```
+* Cria uma branch com os commits do pull request
