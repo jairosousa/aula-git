@@ -3,7 +3,7 @@
 ## Chave SSH e documentação Git
  
  [Gerar nova chave ssh](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-
+***
  ## Criando o Primeiro Repósitorio
 
  ```console
@@ -22,7 +22,7 @@
 
  > git commit -m "Criado o primeiro arquivo."
  ```
-
+***
  # Configurando
 
  * Configure seu nome e e-mail:
@@ -42,6 +42,7 @@
 
  SAIR E SALVAR :WQ
 
+---
  ## Git Status e Log
 
  * Comando para ver o status do repositório
@@ -394,3 +395,108 @@
 > git fetch origin pull/ID/head:BRANCH
 ```
 * Cria uma branch com os commits do pull request
+
+## .gitignore
+
+* Configura arquivos que devem ser ignorados.
+
+* Contém arquivos, caminhos e patterns.
+
+Exemplo:
+
+> .project
+>
+> node_modules/
+>
+> bower_components/
+>
+> **/*.css
+___
+## Git Commit Amend
+```console
+> git commit --amend
+```
+* Altera o último commit.
+    - Mensagem de commit.
+    - Adiciona arquivos.
+
+## Git Stash
+```console
+> git stash
+```
+* Guarda as alterações do Working Directory.
+
+* Permite fazer rebase, merge, trocar de branch a necessidade de fazer um commit.
+```console
+> git stash list
+
+> git stash pop
+```
+* Aplica o último stash armazenado.
+
+## Cherrypick
+
+```console
+> git cherry-pick <commit>
+```
+
+* Aplica as alterações de um commit na branch atual.
+
+* Cria um novo commit.
+
+* Útil para recuperar histórico.
+
+## Blame
+```console
+> git blame
+```
+
+* Mostra as alterações feitas em um arquivo por linha.
+
+* Mostra o autor e o commit que foi feito aquela linha.
+
+* Útil para verificar quando as alterações foram feitas, por que e por quem.
+
+
+## Git Bisect
+
+```console
+> git bisect
+```
+
+* Permite fazer uma busca binária nos commits para encontrar uma alteração.
+
+* Útil para alterações que modificam o comportamento e não podem ser identificadas por código facilmente.
+
+* Quando a alteração pode ser bastante antiga.
+
+## GitHub Pages
+
+* Hospedagem d ewebsite estático.
+
+* Site para usuarios, organizações e repositórios.
+
+* Branch especial `gh-pages`.
+
+* Deve conter um index.html
+
+* Gerador de páginas do GitHub.
+
+## [GitHub Milestone](https://guides.github.com/features/issues/{text-center})
+
+* Grupo de Issues associado a um objetivo.
+
+* Possui uma data.
+
+* Permite acompanhar a % de issues resolvidas.
+
+* Existe em outros servidores Git.
+
+___
+
+#  Hooks e Serviços
+* Permite integrar eventos do repositorio com outras aplicações.
+
+* Possui alguns serviços já compativeis.
+
+* Exemplo: Travis_CI, Slack
