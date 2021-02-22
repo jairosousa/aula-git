@@ -105,7 +105,7 @@ _criar arquivo qualquer um ".txt" no diretório "auldagit" e digite qualquer coi
 ```
 *(no exemplo foi pedido 2 dias)*
 
-## Renomar um commit
+## 8 Renomear um commit
 ```bash
 > git commit -m "Nova mensagem que vai substituir a anterior" --amend
 ```
