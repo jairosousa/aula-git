@@ -457,6 +457,32 @@ _**Dica para você!**_
 
 ## 7 - Após os teste no travis e estiver tudo ok, faça o **merge request** com o master click em Merge pull request
 
+## Git Tag
+
+* Útil para definir versões estáveis do projeto.
+* Semelhante a Branch porém não recebe mais commits.
+* Guarda um estado do repositório.
+```
+git tag [nome da tag]
+```
+```
+git push <remote> <tag>
+```
+<remote) geralmente é igual ao `origin`
+
+### Como baixar a versão de uma TAG
+
+1. Faça checkout para tag
+```
+git checkout <tag>
+```
+
+2. Depois crie nova branch a partie da Tag
+```
+git checkout -b <nome-nova-branch>
+```
+
+
 <br/>
 <br/>
 <br/>
