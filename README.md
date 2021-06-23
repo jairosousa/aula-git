@@ -249,7 +249,7 @@ Applying: Adicionando o arquivo texto4.txt
 ### Agora você pode enviar seu arquivos locais para o remoto
 
 ```
-> git push origin master
+git push origin master
 ```
 
 ## Push em outra Branch
@@ -257,7 +257,7 @@ Applying: Adicionando o arquivo texto4.txt
 ## 1. Verifique os branch's repositorio local
 
 ```
-> git brunch
+git brunch
 ```
         
 ## 2. Verifique todos as branch's local e remoto
@@ -313,13 +313,13 @@ To https://github.com/jairosousa/aula-git.git
 ## Você tem criar no seu remoto uma **branch** com o mesmo nome e coloque a referencia remoto depois
 
 ```
-> git checkout -b <<"nome-branch-local">> origin/"nome-branch-remoto"
+git checkout -b <<"nome-branch-local">> origin/"nome-branch-remoto"
 ```
 
 ## Para verificar se todos os arquivos estão sincronizados:
 
 ```
-> git pull
+git pull
 ```
 
 ## Push e Pull com o novo branch
@@ -328,7 +328,7 @@ To https://github.com/jairosousa/aula-git.git
 *Clonar o repositório em outra pasta exemplo aulagit-clone*
  
 ```
-> git clone https://github.com/jairosousa/aula-git.git
+git clone https://github.com/jairosousa/aula-git.git
 ```
 
 ## No primeiro repositório faça alteração em arquivo exemplo arquivo.txt e depois fazer um **pull** para repositório remoto.
@@ -343,13 +343,13 @@ To https://github.com/jairosousa/aula-git.git
    _~/Documents/Cursos/Code-Education/Git/aulagit-clone (master)_
 
 ```
-   > git **pull** origin master
+git **pull** origin master
 ```
 
 ## Agora vamos criar um novo **branch** no mesmo repositório.
 
 ```
-> git checkout -b novoBranch
+git checkout -b novoBranch
 ```
 <code><strong>console:<strong></code>
    _Switched to a new branch 'novoBranch'+
@@ -357,22 +357,21 @@ To https://github.com/jairosousa/aula-git.git
 Vamos criar novo arquivo nesse **branch**
 
 ```
-> git status
+git status
 ```
 
 ```
-> git add "arquivo-novobranch.txt"
+git add "arquivo-novobranch.txt"
 ```
 
 ```
-> git commit -m "Adicionar arquivo - exemplo de novo branch"
-
+git commit -m "Adicionar arquivo - exemplo de novo branch"
 ```
 
 Agora enviar para o repositório remoto
 
 ```
->git **push** origin novoBranch
+git **push** origin novoBranch
 
 ```
    **[new branch]      novoBranch -> novoBranch*
@@ -448,7 +447,7 @@ _**Dica para você!**_
 ## 4 - Commit para nova branch
 
 ```
-> git push origin nova-branch
+git push origin nova-branch
 ``` 
 
 ## 5 - No repositorio remoto acesse a nova branch e click em new pull-request
@@ -457,38 +456,44 @@ _**Dica para você!**_
 
 ## 7 - Após os teste no travis e estiver tudo ok, faça o **merge request** com o master click em Merge pull request
 
-## Git Tag
+
+# Git Tag
 
 * Útil para definir versões estáveis do projeto.
 * Semelhante a Branch porém não recebe mais commits.
 * Guarda um estado do repositório.
+
 ```
 git tag [nome da tag]
 ```
+
 ```
 git push <remote> <tag>
 ```
+
 <remote> geralmente é igual ao `origin`
 
-### Como baixar a versão de uma TAG
+## Como baixar a versão de uma TAG
 
 1. Faça checkout para tag
+
 ```
 git checkout <tag>
 ```
 
 2. Depois crie nova branch a partie da Tag
+
 ```
 git checkout -b <nome-nova-branch>
 ```
 
-## Fork
+# Fork
 
 * Copia um repositório de outro usuário para o seu usuário no Github.
 * É assim que começa a contribuição para outros projetos
 * Você teria uma cópia independente do repositório original, podendo fazer quaisquer alterações.
 
-## Issues
+# Issues
 
 * Tradução: **Questões**.
 * reportar bugs.
@@ -497,22 +502,21 @@ git checkout -b <nome-nova-branch>
 * Pode ser referenciado por commits
   * Pode ser fechada acrescentando o comando na descrição do commit: `"Closes #3"`
   
-## Pull Request
+# Pull Request
 
 * O grande simbolo de colaboração.
 * É quando você solicita que sua alterações sejam unidas a uma branch no mesmo repositório ou um repositório que sofreu o **fork**.
 * Igual uma **Issue** porém com uma branch associada.
 * Muito útil para o trabalho coloborativo.
     
-### Links para ajudar nos recursos
+## Links para ajudar nos recursos
 [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 
-** Gitignore
+# Gitignore
 
 * Configura arquivos que devem ser ignorados
 * Contem arquivos, caminhos e pattherns
 
->
 >.project
 >
 >node_modules/
@@ -520,9 +524,8 @@ git checkout -b <nome-nova-branch>
 >bower_components/
 >
 >**/*.css
->
 
-## Git Commit Amend
+# Git Commit Amend
 
 ```
 git commit --amend
@@ -532,25 +535,28 @@ git commit --amend
   * Mensagem de commit.
   * Adiciona arquivos
   
-## Git Stash
+
+# Git Stash
 
 ```
 git stash
 ```
+
 * Guarda as alterações do *Working Directory*.
 * Permite fazer rebase, merge, trocar de branch sem necessidade de fazer um commit.
 
-### Lista os Stash
+## Lista os Stash
 ```
 git stash list
 ```
 
-### Aplica o ultimo Stash armazenado
+## Aplica o ultimo Stash armazenado
+
 ```
 git stash pop
 ```
 
-## Git Brame
+# Git Brame
 
 ```
 git brame <nome arquivo>
