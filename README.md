@@ -468,7 +468,7 @@ git tag [nome da tag]
 ```
 git push <remote> <tag>
 ```
-<remote) geralmente é igual ao `origin`
+<remote> geralmente é igual ao `origin`
 
 ### Como baixar a versão de uma TAG
 
@@ -482,6 +482,83 @@ git checkout <tag>
 git checkout -b <nome-nova-branch>
 ```
 
+## Fork
+
+* Copia um repositório de outro usuário para o seu usuário no Github.
+* É assim que começa a contribuição para outros projetos
+* Você teria uma cópia independente do repositório original, podendo fazer quaisquer alterações.
+
+## Issues
+
+* Tradução: **Questões**.
+* reportar bugs.
+* Organizar tarefas a serem feitas.
+* Permitir discursões entre os usuário.
+* Pode ser referenciado por commits
+  * Pode ser fechada acrescentando o comando na descrição do commit: `"Closes #3"`
+  
+## Pull Request
+
+* O grande simbolo de colaboração.
+* É quando você solicita que sua alterações sejam unidas a uma branch no mesmo repositório ou um repositório que sofreu o **fork**.
+* Igual uma **Issue** porém com uma branch associada.
+* Muito útil para o trabalho coloborativo.
+    
+### Links para ajudar nos recursos
+[Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+
+** Gitignore
+
+* Configura arquivos que devem ser ignorados
+* Contem arquivos, caminhos e pattherns
+
+>
+>.project
+>
+>node_modules/
+>
+>bower_components/
+>
+>**/*.css
+>
+
+## Git Commit Amend
+
+```
+git commit --amend
+```
+
+* Altera o último commit.
+  * Mensagem de commit.
+  * Adiciona arquivos
+  
+## Git Stash
+
+```
+git stash
+```
+* Guarda as alterações do *Working Directory*.
+* Permite fazer rebase, merge, trocar de branch sem necessidade de fazer um commit.
+
+### Lista os Stash
+```
+git stash list
+```
+
+### Aplica o ultimo Stash armazenado
+```
+git stash pop
+```
+
+## Git Brame
+
+```
+git brame <nome arquivo>
+```
+
+* Mostra as alterações feitas em um arquivo por linha.
+* Mostra o autor e o commit que foi feito aquela linha.
+* Útil para verificar quando as alterações foram feitas, por que e por quem.
 
 <br/>
 <br/>
